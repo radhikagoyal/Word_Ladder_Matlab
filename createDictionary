@@ -4,8 +4,8 @@ place = 1;
 list = [];
 while ~feof(file)
     line = fgetl(file);
-    if(length(line) == wordLen)
-        list{place} = line;
+    if(length(line) == wordLen)     % Checking to see if word is same length as inputs
+        list{place} = line;         % If yes, we place in a list we will later sort
         place=place+1;
     end
 end
