@@ -3,10 +3,10 @@ function [output] = arrContainsX(word, dictionary, startIndex, endIndex)
         output = false;
         return
     end
-    mid = floor((startIndex+endIndex+1)/2);
-    check = dictionary{mid};
-    result = strCompare(word, check);
-    if(result==0)
+    mid = floor((startIndex+endIndex+1)/2);                         % We are looking through the dictionary recursively
+    check = dictionary{mid};                                        % We check midway and keep calling this function
+    result = strCompare(word, check);                               % by redefining what the middle is until we
+    if(result==0)                                                   % locate the word or find that it doesn't exist
         output = true;
         return;
     elseif(result==1)
